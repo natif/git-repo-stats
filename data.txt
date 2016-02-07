@@ -1,4 +1,6 @@
 
 
 
-git log --author="<authorname>" --pretty=tformat: --numstat
+git log --author="natif" --pretty=tformat: --numstat
+
+git log --pretty=format:"%an"
