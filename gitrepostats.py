@@ -21,8 +21,6 @@ users_dict_added = {}
 users_dict_deleted = {}
 
 for user in users_set:
-	print("User: " + user)
-	print("\n")
 	file_lines = execute("git log --author=\""+user+"\" --pretty=tformat: --numstat")
 	lines_added = 0
 	lines_deleted = 0 
@@ -35,6 +33,13 @@ for user in users_set:
 	users_dict_added[user] = lines_added
 	users_dict_deleted[user] = lines_deleted
 
-print(users_set)
-print(users_dict_added)
-print(users_dict_deleted)
+users_set = sorted(users_set)
+
+for commiter in users_set:
+	print(commiter)
+	print("Lines added: " + str(users_dict_added[commiter]))
+	print("Lines deleted: " + str(users_dict_deleted[commiter]))
+	subtraction = users_dict_added[commiter] - users_dict_deleted[commiter]
+	print("Added-Deleted: " + str(subtraction))
+	print("\n")
+
