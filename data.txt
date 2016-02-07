@@ -1,6 +1,0 @@
-
-
-
-git log --author="natif" --pretty=tformat: --numstat
-
-git log --pretty=format:"%an"
