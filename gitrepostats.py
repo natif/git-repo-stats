@@ -26,8 +26,10 @@ for commiter in commiters:
 	for commit_line in commit_lines:
 		line_result = commit_line.split()
 		if line_result:
-			lines_added += int(line_result[0])
-			lines_deleted += int(line_result[1])
+			if "-" not in line_result[0]:
+				lines_added += int(line_result[0])
+			if "-" not in line_result[1]:
+				lines_deleted += int(line_result[1])
 
 	lines_added_by_commiter[commiter] = lines_added
 	lines_deleted_by_commiter[commiter] = lines_deleted
