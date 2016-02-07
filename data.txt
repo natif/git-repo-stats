@@ -1,0 +1,4 @@
+
+
+
+git log --author="<authorname>" --pretty=tformat: --numstat
